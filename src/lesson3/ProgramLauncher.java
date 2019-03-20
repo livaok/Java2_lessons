@@ -9,17 +9,18 @@ public class ProgramLauncher {
 
 	public static void main(String[] args) {
 
-		String[] words = new String[10];
-		words[0] = "kitty";
-		words[1] = "cat";
-		words[2] = "kitty";
-		words[3] = "cat";
-		words[4] = "cat";
-		words[5] = "parrot";
-		words[6] = "cat";
-		words[7] = "dog";
-		words[8] = "cat";
-		words[9] = "cat";
+		String[] words = {
+				"kitty",
+				"cat",
+				"kitty",
+				"cat",
+				"cat",
+				"cat",
+				"parrot",
+				"dog",
+				"cat",
+				"cat"
+		};
 
 		System.out.println("Исходный массив:");
 		for (String word1 : words) {
@@ -38,12 +39,12 @@ public class ProgramLauncher {
 				count++;
 			}
 			else {
-				count = 0;
-				count++;
+				repeatWords.put(repeatWord, count);
+				count = 1;
 				repeatWord = word;
 			}
-			repeatWords.put(word, count);
 		}
+		repeatWords.put(words[words.length-1], count);
 
 		System.out.println("Список уникальных слов массива:");
 
@@ -60,7 +61,7 @@ public class ProgramLauncher {
 		phonebook.add("Петров", 111111);
 		phonebook.add("Петров", 234434);
 		phonebook.add("Иванов", 234344);
-		phonebook.get("Петров");
+		System.out.println("Номера телефонов абонента Петров: " + phonebook.get("Петров"));
 		phonebook.get("Куликов");
 	}
 }

@@ -1,9 +1,7 @@
 package lesson3;
 
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author liva
@@ -11,17 +9,19 @@ import java.util.Set;
 public class Phonebook {
 
 	private Map<Integer, String> data = new HashMap<>();
+	private List<Integer> numbers = new ArrayList<>();
 
-	void get(String name) {
+	public List<Integer> get(String name) {
 		Set<Map.Entry<Integer, String>> entrySet = data.entrySet();
 		for (Map.Entry<Integer, String> pair : entrySet) {
 			if (name.equals(pair.getValue())) {
-				System.out.println(String.format("Номер телефона абонента %s: %s",name, pair.getKey()));
+				numbers.add(pair.getKey());
 			}
 		}
+		return numbers;
 	}
 
-	void add(String name, Integer telephone) {
+	public void add(String name, Integer telephone) {
 		data.put(telephone, name);
 	}
 }
