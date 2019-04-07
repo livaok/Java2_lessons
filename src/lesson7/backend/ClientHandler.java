@@ -35,7 +35,7 @@ public class ClientHandler implements Runnable {
 	private void close() {
 		server.removeClientFromServer(this);
 		clientsCount--;
-		server.sendMsgToAllClients("Осталось клиентов в чате " + clientsCount);
+		server.sendMsgToAllClients("РћСЃС‚Р°Р»РѕСЃСЊ РєР»РёРµРЅС‚РѕРІ РІ С‡Р°С‚Рµ " + clientsCount);
 	}
 
 	public void sendMsg(String msg) {
@@ -46,7 +46,7 @@ public class ClientHandler implements Runnable {
 	@Override
 	public void run() {
 		try {
-			server.sendMsgToAllClients("Появился новый клиент ");
+			server.sendMsgToAllClients("РџРѕСЏРІРёР»СЃСЏ РЅРѕРІС‹Р№ РєР»РёРµРЅС‚ ");
 
 			while (true) {
 				if (inMessage.hasNext()) {

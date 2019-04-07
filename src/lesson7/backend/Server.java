@@ -20,7 +20,7 @@ public class Server {
 
 		try {
 			serverSocket = new ServerSocket(PORT);
-			System.out.println("Сервер запущен");
+			System.out.println("РЎРµСЂРІРµСЂ Р·Р°РїСѓС‰РµРЅ");
 
 			while (true) {
 				clientSocket = serverSocket.accept();
@@ -35,7 +35,7 @@ public class Server {
 		finally {
 			try {
 				clientSocket.close();
-				System.out.println("Сервер завершает работу");
+				System.out.println("РЎРµСЂРІРµСЂ Р·Р°РІРµСЂС€Р°РµС‚ СЂР°Р±РѕС‚Сѓ");
 				serverSocket.close();
 			}
 			catch (IOException e) {
